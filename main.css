@@ -1,0 +1,40 @@
+body {
+  max-width: 40rem;
+  margin: auto;
+  color: #000;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding: 0.8rem;
+}
+
+header > a {
+  padding-right: 1em;
+}
+
+main {
+  margin: 1rem;
+}
+
+main > section {
+  scroll-margin-top: 4rem;
+}
+
+footer {
+  margin: 1rem;
+}
+
+footer ul {
+  padding-left: 1rem;
+}
+
+footer li {
+  list-style-type: none;
+}
+
+li {
+  padding-bottom: .3em;
+}
