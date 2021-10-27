@@ -4,6 +4,10 @@ body {
   color: #000;
 }
 
+a {
+  color: #000;
+}
+
 header {
   position: sticky;
   top: 0;
@@ -11,8 +15,24 @@ header {
   padding: 0.8rem;
 }
 
-header > a {
+header > nav {
+  display: inline-block;
+}
+
+header > nav > ul {
+  padding: 0;
+}
+
+header > nav > ul > li {
+  display: inline-block;
   padding-right: 1em;
+}
+
+#toggleDark {
+  cursor: pointer;
+  display: inline-block;
+  color: #fff;
+  background: #000;
 }
 
 main {
@@ -20,7 +40,7 @@ main {
 }
 
 main > section {
-  scroll-margin-top: 4rem;
+  scroll-margin-top: 6rem;
 }
 
 footer {
@@ -35,6 +55,6 @@ footer li {
   list-style-type: none;
 }
 
-li {
+main li, footer li {
   padding-bottom: .3em;
 }
