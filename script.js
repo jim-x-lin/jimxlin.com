@@ -22,12 +22,14 @@ function encode(string) {
   return output;
 }
 
-function decodeEmail() {
-  var el = document.getElementById("email");
-  el.href = decode(el.getAttribute("href").trim());
-  el.innerHTML = decode(el.innerHTML.trim());
+function decodeContacts() {
+  var links = document.querySelectorAll("#contact a");
+  links.forEach(function(link) {
+    link.setAttribute("href", decode(link.getAttribute("href").trim()));
+    link.innerHTML = decode(link.innerHTML.trim());
+  });
 }
 
 window.onload = function() {
-  decodeEmail();
+  decodeContacts();
 }
