@@ -1,0 +1,32 @@
+{
+  "name": "jimxlin-homepage",
+  "version": "1.0.0",
+  "description": "personal static website",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --config webpack.dev.js --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miljinx/jimxlin-homepage.git"
+  },
+  "author": "Jim X. Lin",
+  "license": "CC-BY-4.0",
+  "bugs": {
+    "url": "https://github.com/miljinx/jimxlin-homepage/issues"
+  },
+  "homepage": "https://github.com/miljinx/jimxlin-homepage#readme",
+  "devDependencies": {
+    "css-loader": "^6.5.0",
+    "html-loader": "^3.0.0",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.60.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.4.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}

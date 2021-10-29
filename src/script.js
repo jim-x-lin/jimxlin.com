@@ -1,3 +1,7 @@
+require("./index.html");
+require("normalize.css/normalize.css");
+require("./main.css");
+
 /****************************************
  * Obfuscation inspired by ScrapeShield *
  ****************************************/
@@ -12,15 +16,15 @@ function decode(string) {
 }
 
 // use offline and hard-code the result
-function encode(string) {
-  const key = Math.ceil(Math.random() * 1295);
-  var output = key.toString(36);
-  for (var i = 0; i < string.length; i += 1) {
-    const encoded = (key ^ string.charCodeAt(i)).toString(36);
-    output += encoded.length === 1 ? '0' + encoded : encoded;
-  }
-  return output;
-}
+// function encode(string) {
+//   const key = Math.ceil(Math.random() * 1295);
+//   var output = key.toString(36);
+//   for (var i = 0; i < string.length; i += 1) {
+//     const encoded = (key ^ string.charCodeAt(i)).toString(36);
+//     output += encoded.length === 1 ? '0' + encoded : encoded;
+//   }
+//   return output;
+// }
 
 function decodeContacts() {
   var links = document.querySelectorAll("#contact a");
