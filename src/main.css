@@ -55,6 +55,7 @@ footer li {
   list-style-type: none;
 }
 
-main li, footer li {
-  padding-bottom: .3em;
+main li,
+footer li {
+  padding-bottom: 0.3em;
 }

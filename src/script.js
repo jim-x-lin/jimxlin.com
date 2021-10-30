@@ -82,14 +82,14 @@ function toggleDark() {
  ***********/
 
 function styleMultiple(selector, property, value) {
-  var els = document.querySelectorAll(selector)
+  var els = document.querySelectorAll(selector);
   for (var i = 0; i < els.length; i += 1) {
     els[i].style[property] = value;
   }
 }
 
-window.onload = function() {
+window.onload = function () {
   decodeContacts();
   if (localStorage.getItem("darkmode")) makeDark();
   document.querySelector("#toggleDark").onclick = toggleDark;
-}
+};
