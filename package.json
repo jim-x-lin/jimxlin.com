@@ -4,8 +4,11 @@
   "description": "personal static website",
   "main": "./src/index.js",
   "scripts": {
+    "start": "webpack-dev-server --config webpack.dev.js --mode development",
+    "lint": "npx prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --config webpack.dev.js --mode development"
+    "build": "webpack --config webpack.prod.js --mode production",
+    "preview": "npx build && http-server dist"
   },
   "repository": {
     "type": "git",
@@ -18,9 +21,13 @@
   },
   "homepage": "https://github.com/miljinx/jimxlin-homepage#readme",
   "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.5.0",
+    "css-minimizer-webpack-plugin": "^3.1.1",
     "html-loader": "^3.0.0",
     "html-webpack-plugin": "^5.5.0",
+    "http-server": "^14.0.0",
+    "mini-css-extract-plugin": "^2.4.3",
     "prettier": "2.4.1",
     "style-loader": "^3.3.1",
     "webpack": "^5.60.0",

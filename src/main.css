@@ -43,6 +43,10 @@ main > section {
   scroll-margin-top: 6rem;
 }
 
+main li {
+  padding-bottom: 0.3em;
+}
+
 footer {
   margin: 1rem;
 }
@@ -53,9 +57,5 @@ footer ul {
 
 footer li {
   list-style-type: none;
-}
-
-main li,
-footer li {
-  padding-bottom: 0.3em;
+  padding-bottom: 1em;
 }
