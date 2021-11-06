@@ -16,7 +16,8 @@ header {
 }
 
 header > nav {
-  display: inline-block;
+  display: flex;
+  align-items: center;
 }
 
 header > nav > ul {
@@ -30,9 +31,8 @@ header > nav > ul > li {
 
 #toggleDark {
   cursor: pointer;
-  display: inline-block;
-  color: #fff;
-  background: #000;
+  height: 1em;
+  padding-left: 0.5em;
 }
 
 main {

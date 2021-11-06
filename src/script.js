@@ -48,9 +48,7 @@ function makeDark() {
   headerEl.style.color = "#fff";
   headerEl.style.background = "#000";
   var toggleEl = document.querySelector("#toggleDark");
-  toggleEl.innerHTML = "Light";
-  toggleEl.style.color = "#000";
-  toggleEl.style.background = "#fff";
+  toggleEl.style.filter = "invert(1)";
   styleMultiple("a", "color", "#fff");
 }
 
@@ -62,9 +60,7 @@ function makeLight() {
   headerEl.style.color = "#000";
   headerEl.style.background = "#fff";
   var toggleEl = document.querySelector("#toggleDark");
-  toggleEl.innerHTML = "Dark";
-  toggleEl.style.color = "#fff";
-  toggleEl.style.background = "#000";
+  toggleEl.style.filter = "invert(0)";
   styleMultiple("a", "color", "#000");
 }
 
@@ -88,6 +84,10 @@ function styleMultiple(selector, property, value) {
     els[i].style[property] = value;
   }
 }
+
+/**************
+ * Initialize *
+ **************/
 
 window.onload = function () {
   decodeContacts();
