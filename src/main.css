@@ -47,6 +47,17 @@ main li {
   padding-bottom: 0.3em;
 }
 
+main h1 {
+  display: flex;
+  align-items: center;
+}
+
+#headshot {
+  border-radius: 50%;
+  height: 2em;
+  margin-right: 0.5em;
+}
+
 footer {
   margin: 1rem;
 }

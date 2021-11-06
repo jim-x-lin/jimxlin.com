@@ -1,6 +1,7 @@
 require("./index.html");
 require("normalize.css/normalize.css");
 require("./main.css");
+require("./img/headshot.jpg");
 
 /****************************************
  * Obfuscation inspired by ScrapeShield *
