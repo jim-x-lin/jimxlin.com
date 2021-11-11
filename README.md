@@ -135,7 +135,7 @@ Prevent direct access to the bucket with the url `www.jimxlin.com.s3-website-us-
 
 ### Add security headers to CloudFront
 
-Improve the overall security of the website.
+Improve security by adding headers to the response that CloudFront will send to browsers.
 
 1. Go to __AWS Management Console > CloudFront > Functions > Create function__
 2. Set "Name" to `security-headers`, this is arbitrary
@@ -148,11 +148,15 @@ Improve the overall security of the website.
     
         // Set HTTP security headers
         // Since JavaScript doesn't allow for hyphens in variable names, we use the dict["key"] notation 
-        headers['strict-transport-security'] = { value: 'max-age=63072000; includeSubdomains; preload'}; 
-        headers['content-security-policy'] = { value: "default-src 'none'; img-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'"}; 
-        headers['x-content-type-options'] = { value: 'nosniff'}; 
-        headers['x-frame-options'] = {value: 'DENY'}; 
-        headers['x-xss-protection'] = {value: '1; mode=block'}; 
+        headers['strict-transport-security'] = { value: 'max-age=63072000; includeSubdomains; preload' };
+        headers['content-security-policy'] = { value: "default-src 'none'; img-src 'self'; form-action: 'none';frame-ancestors 'none'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" };
+        headers['permissions-policy'] = { value: "layout-animations 'none'; unoptimized-images 'none'; oversized-images 'none'; sync-script 'none'; sync-xhr 'none'; unsized-media 'none';" };
+        headers['referrer-policy'] = { value: 'no-referrer' };
+        headers['server'] = { value: '' };
+        headers['x-content-type-options'] = { value: 'nosniff' };
+        headers['x-frame-options'] = { value: 'DENY' };
+        // https://github.com/OWASP/CheatSheetSeries/issues/376 
+        headers['x-xss-protection'] = { value: '0' };
     
         // Return the response to viewers 
         return response;
