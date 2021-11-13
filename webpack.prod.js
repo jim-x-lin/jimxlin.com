@@ -7,7 +7,7 @@ const buildPath = path.resolve(__dirname, "dist");
 
 module.exports = {
   entry: {
-    index: "./src/script.js",
+    index: "./src/index.js",
   },
 
   output: {
