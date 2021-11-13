@@ -5,7 +5,6 @@ Hosted [here](https://www.jimxlin.com).
 ## Todo
 
 - [ ] (S) add links to projects section
-- [ ] (S) add pre-commit hooks
 - [ ] (M) convert to typescript
 - [ ] (L) create Terraform module for website setup
 - [ ] (XL) continuous deployment with github actions
