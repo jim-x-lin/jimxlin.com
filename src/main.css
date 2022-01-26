@@ -4,6 +4,14 @@ body {
   color: #000;
 }
 
+footer {
+  scroll-margin-top: 5rem;
+}
+
+footer #footer-footer {
+  margin-top: 100vh;
+}
+
 a {
   color: #000;
 }
