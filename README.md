@@ -4,13 +4,13 @@ Hosted [here](https://www.jimxlin.com).
 
 ## What
 
-Minimal website with a minimal tech stack. 
+Minimal website with a minimal tech stack.
 
-This repository uses pure HTML, pure CSS, Node.js, webpack, and some AWS services to create a static website.
+This website is written in plain HTML, CSS, and JS. AWS services are used directly to host the static webpage. Node.js and webpack are used to improve the development experience.
 
 ## Why
 
-I want to keep my main page simple and easy to maintain, since I don't expect to make large or frequent changes. Other projects will be hosted on subdomains and will be linked here.
+I want to keep my main page simple to view and easy to maintain, since I don't expect to make large or frequent changes. Other projects will be hosted on subdomains and will be linked here.
 
 ## Todo
 
@@ -18,6 +18,12 @@ I want to keep my main page simple and easy to maintain, since I don't expect to
 - [ ] (XL) continuous deployment with github actions
 
 ## Updating the Website
+
+_This process has been automated, you can run the npm script instead:_
+
+```sh
+npm run deploy
+```
 
 CloudFront uses caching to improve performance, but changes to the website will not be automatically served by CloudFront.
 
@@ -190,4 +196,3 @@ Improve security by adding headers to the response that CloudFront will send to 
 10. Set "Distribution" to the one used for the website
 11. Set "Event type" to `Viewer Response`
 12. Set "Cache behavior" to `Default (*)`
-
