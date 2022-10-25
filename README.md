@@ -2,11 +2,30 @@
 
 Hosted [here](https://www.jimxlin.com).
 
+## What
+
+Minimal website with a minimal tech stack. 
+
+This repository uses pure HTML, pure CSS, Node.js, webpack, and some AWS services to create a static website.
+
+## Why
+
+I want to keep my main page simple and easy to maintain, since I don't expect to make large or frequent changes. Other projects will be hosted on subdomains and will be linked here.
+
 ## Todo
 
-- [ ] (M) convert to typescript
 - [ ] (L) create Terraform module for website setup
 - [ ] (XL) continuous deployment with github actions
+
+## Updating the Website
+
+CloudFront uses caching to improve performance, but changes to the website will not be automatically served by CloudFront.
+
+1. Go to **AWS Management Console > S3 > www<nolink>.jimxlin.com**
+2. Delete all files from the bucket
+3. Upload the new build files
+4. Go to **AWS Management Console > CloudFront > Distributions > {ID} > Invalidations > Create Invalidation**
+5. Set "Add object paths" to `/*`
 
 ## Setting up the Website
 
@@ -172,12 +191,3 @@ Improve security by adding headers to the response that CloudFront will send to 
 11. Set "Event type" to `Viewer Response`
 12. Set "Cache behavior" to `Default (*)`
 
-## Updating the Website
-
-CloudFront uses caching to improve performance, but changes to the website will not be automatically served by CloudFront.
-
-1. Go to **AWS Management Console > S3 > www<nolink>.jimxlin.com**
-2. Delete all files from the bucket
-3. Upload the new build files
-4. Go to **AWS Management Console > CloudFront > Distributions > {ID} > Invalidations > Create Invalidation**
-5. Set "Add object paths" to `/*`
