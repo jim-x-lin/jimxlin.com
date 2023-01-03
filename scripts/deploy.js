@@ -30,7 +30,7 @@ const emptyBucket = async (s3Client, bucketParams) => {
       return;
     }
     for (let i = 0; i < objects.length; i += 1) {
-      const data = await s3Client.send(
+      await s3Client.send(
         new DeleteObjectCommand({
           Bucket: bucketParams.Bucket,
           Key: objects[i].Key,
@@ -49,7 +49,7 @@ const uploadBuildFiles = async (s3Client, bucketParams) => {
     const fileNames = fs.readdirSync(buildPath);
     for (let i = 0; i < fileNames.length; i += 1) {
       const filePath = path.resolve(buildPath, fileNames[i]);
-      const data = await s3Client.send(
+      await s3Client.send(
         new PutObjectCommand({
           Bucket: bucketParams.Bucket,
           Key: path.basename(fileNames[i]),
@@ -68,7 +68,7 @@ const uploadBuildFiles = async (s3Client, bucketParams) => {
 const invalidateCache = async (cloudFrontClient, distributionId) => {
   console.log("Creating invalidation...");
   try {
-    const data = await cloudFrontClient.send(
+    await cloudFrontClient.send(
       new CreateInvalidationCommand({
         DistributionId: distributionId,
         InvalidationBatch: {
