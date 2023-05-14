@@ -175,7 +175,8 @@ Improve security by adding headers to the response that CloudFront will send to 
        // Since JavaScript doesn't allow for hyphens in variable names, we use the dict["key"] notation
        headers['strict-transport-security'] = { value: 'max-age=63072000; includeSubdomains; preload' };
        headers['content-security-policy'] = { value: "default-src 'none'; img-src 'self'; form-action: 'none';frame-ancestors 'none'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self';" };
-       headers['permissions-policy'] = { value: "layout-animations 'none'; unoptimized-images 'none'; oversized-images 'none'; sync-script 'none'; sync-xhr 'none'; unsized-media 'none';" };
+       // https://www.permissionspolicy.com/
+       headers['permissions-policy'] = { value: "accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), cross-origin-isolated=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), navigation-override=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), web-share=(), xr-spatial-tracking=(), clipboard-read=(), clipboard-write=(), gamepad=(), speaker-selection=(), conversion-measurement=(), focus-without-user-activation=(), hid=(), idle-detection=(), interest-cohort=(), serial=(), sync-script=(), trust-token-redemption=(), unload=(), window-management=(), vertical-scroll=()" };
        headers['referrer-policy'] = { value: 'no-referrer' };
        headers['server'] = { value: '' };
        headers['x-content-type-options'] = { value: 'nosniff' };
